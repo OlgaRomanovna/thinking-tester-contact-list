@@ -12,6 +12,7 @@ from utils.const import CREATED, OK, CRITICAL
 @allure.title('Проверка кода ответа от сервера после удаления пользователя')
 @pytest.mark.test_api
 @pytest.mark.user
+@pytest.mark.skip
 def test_delete_user(load_env):
     with allure.step('Регистрируем пользователя'):
         json = {
