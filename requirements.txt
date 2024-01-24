@@ -1,0 +1,9 @@
+pytest~=7.4.2
+requests~=2.31.0
+allure-pytest
+curlify~=2.2.1
+jsonschema==4.19.1
+python-dotenv~=1.0.0
+selene==2.0.0rc4
+pydantic==1.*
+faker==22.5.1
