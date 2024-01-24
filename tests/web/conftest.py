@@ -1,9 +1,14 @@
 import os
+import allure
 import pytest
 from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
+from data import data
+from tests.api.conftest import post_request
+from utils import const
 from utils.attachments import add_html, add_screenshot, add_video, add_logs
 
 DEFAULT_BROWSER_VERSION = '120'
@@ -45,8 +50,7 @@ def open_browser(request):
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default="chrome",
                      help="Choose browser: chrome or firefox")
-    parser.addoption('--browser_version', action='store', default="120.0")
-
+    parser.addoption('--browser_version', action='store', default="99.0")
 
 @pytest.fixture(scope='session', autouse=True)
 def load_env():
