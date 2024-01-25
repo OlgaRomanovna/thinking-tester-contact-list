@@ -21,3 +21,5 @@ def test_add_contact(open_browser):
     page.fill_form()
     page.submit()
     page.check_result()
+
+

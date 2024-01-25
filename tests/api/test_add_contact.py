@@ -9,7 +9,7 @@ from tests.api.conftest import post_request, check_status_code, check_response_l
 @allure.id("29413")
 @allure.severity(BLOCKER)
 @allure.title('Валидация кода и ответа сервера после добавления контакта')
-@pytest.mark.test_api
+@pytest.mark.api
 @pytest.mark.contact
 def test_add_contact():
     with allure.step('Добавляем контакт'):

@@ -9,7 +9,7 @@ from utils.const import CREATED, BLOCKER
 @allure.id("29427")
 @allure.severity(BLOCKER)
 @allure.title('Валидация кода и ответа сервера после регистрации пользователя')
-@pytest.mark.test_api
+@pytest.mark.api
 @pytest.mark.user
 def test_register():
     with allure.step(f'Регистрируем пользователя. Имя {first_name_for_register}, фамилия {last_name_for_register}'):

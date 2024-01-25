@@ -3,13 +3,13 @@ import allure
 import pytest
 from schemas.schema_user import User
 from tests.api.conftest import get_request, check_response_list_schema
-from utils.const import OK, BLOCKER, CRITICAL
+from utils.const import OK, BLOCKER
 
 
 @allure.id("29423")
 @allure.severity(BLOCKER)
 @allure.title('Валидация данных пользователя после авторизации')
-@pytest.mark.test_api
+@pytest.mark.api
 @pytest.mark.user
 def test_get_user_profile(load_env):
     with allure.step('Получаем информацию по профилю пользователя'):

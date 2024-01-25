@@ -1,3 +1,5 @@
 .env
 .pytest_cache
 .idea
+tests/api/allure-results
+tests/web/allure-results

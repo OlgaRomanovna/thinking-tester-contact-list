@@ -7,7 +7,7 @@ from utils.const import OK, UNAUTHORIZED, CRITICAL
 @allure.id("29420")
 @allure.severity(CRITICAL)
 @allure.title('Проверка код ответа сервера после деавторизации')
-@pytest.mark.test_api
+@pytest.mark.api
 @pytest.mark.user
 def test_log_out():
     with allure.step('Осуществляем logout'):
@@ -19,7 +19,7 @@ def test_log_out():
 @allure.id("29424")
 @allure.severity(CRITICAL)
 @allure.title('Проверка получения данных пользователя, для которого выполнена деавторизация')
-@pytest.mark.test_api
+@pytest.mark.api
 @pytest.mark.user
 def test_log_out_and_get_user_data():
     token = get_token()

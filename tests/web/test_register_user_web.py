@@ -1,6 +1,5 @@
 import allure
 import pytest
-
 from pages.login_page import LoginPage
 from pages.logout_page import LogoutPage
 from pages.register_page import RegisterPage
