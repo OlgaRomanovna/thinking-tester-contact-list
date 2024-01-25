@@ -42,29 +42,6 @@ def test_add_contact():
         assert data.state_province == json['stateProvince']
         assert data.postal_code == json['postalCode']
         assert data.country == json['country']
-
-
-@allure.id("29412")
-@allure.severity(CRITICAL)
-@allure.title('Валидация JSON_SCHEMA данных контакта')
-@pytest.mark.test_api
-@pytest.mark.contact
-def test_add_contact_validate_json_schema():
-    with allure.step('Добавляем контакт'):
-        json = {
-            "firstName": data.first_name,
-            "lastName": data.last_name,
-            "birthdate": data.birthdate,
-            "email": data.email,
-            "phone": data.phone,
-            "street1": data.street1,
-            "street2": data.street2,
-            "city": data.city,
-            "stateProvince": data.state_province,
-            "postalCode": data.postal_code,
-            "country": data.country
-        }
-        response = post_request(f'/contacts', json=json)
-        with allure.step('Валидируем json_schema'):
-            check_response_list_schema(ModelItem, response.json())
+    with allure.step('Валидируем json_schema'):
+        check_response_list_schema(ModelItem, response.json())
 

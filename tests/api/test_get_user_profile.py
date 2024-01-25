@@ -20,15 +20,8 @@ def test_get_user_profile(load_env):
         assert response.json()['firstName'] == os.getenv('FIRST_NAME')
         assert response.json()['lastName'] == os.getenv('LAST_NAME')
         assert response.json()['email'] == os.getenv('EMAIL')
-
-
-@allure.id("29422")
-@allure.severity(CRITICAL)
-@allure.title('Валидация JSON_SCHEMA данных пользователя')
-@pytest.mark.user
-def test_validate_json_schema_user_profile():
-    with allure.step('Получаем информацию по профилю пользователя'):
-        response = get_request('/users/me')
-    assert response.status_code == OK
     with allure.step('Валидируем json_schema'):
         check_response_list_schema(User, response.json())
+
+
+
