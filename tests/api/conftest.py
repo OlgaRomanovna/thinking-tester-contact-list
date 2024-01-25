@@ -1,9 +1,6 @@
-import json
 import os
 import allure
 import pytest
-import logging
-
 from allure_commons.types import AttachmentType
 from curlify import to_curl
 from dotenv import load_dotenv
