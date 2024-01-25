@@ -1,8 +1,8 @@
 import allure
 import pytest
-from pages.login_page import LoginPage
-from pages.logout_page import LogoutPage
-from pages.register_page import RegisterPage
+from thinking_tester_contact_list.pages.login_page import LoginPage
+from thinking_tester_contact_list.pages.logout_page import LogoutPage
+from thinking_tester_contact_list.pages.register_page import RegisterPage
 from utils.const import BLOCKER, MINOR
 
 

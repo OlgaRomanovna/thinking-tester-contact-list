@@ -1,7 +1,7 @@
 import allure
 import pytest
-from pages.add_contact_page import AddContactPage
-from pages.login_page import LoginPage
+from thinking_tester_contact_list.pages.add_contact_page import AddContactPage
+from thinking_tester_contact_list.pages.login_page import LoginPage
 from utils.const import BLOCKER
 
 
