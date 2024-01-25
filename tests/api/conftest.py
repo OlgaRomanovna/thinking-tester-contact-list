@@ -32,9 +32,10 @@ def get_curl(response, **kwargs):
     logging.info("Request: " + response.request.url)
     if response.request.body:
         logging.info("INFO Request body: " + response.request.body.decode('utf-8'))
-    logging.info("Request headers: " + str(response.request.headers))
-    logging.info("Response code " + str(response.status_code))
-    logging.info("Response: " + response.text)
+        logging.info("Request headers: " + str(response.request.headers))
+        logging.info("Response code " + str(response.status_code))
+        logging.info("Response: " + response.text)
+
 
 
 def get_token():
