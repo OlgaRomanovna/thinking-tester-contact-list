@@ -19,14 +19,13 @@ def load_env():
 def response_logging(response):
     logging.info("Request: " + response.request.url)
     if response.request.body:
-        logging.info("INFO Request body: " + response.request.body)
+        logging.info("INFO Request body: " + str(response.request.body))
     logging.info("Request headers: " + str(response.request.headers))
     logging.info("Response code " + str(response.status_code))
     logging.info("Response: " + response.text)
 
 
 def response_attaching(response):
-
     allure.attach(
         body=response.request.url,
         name="Request url",
