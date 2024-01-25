@@ -1,11 +1,10 @@
-import random
-
 from faker import Faker
 
 fake = Faker()
 first_name_for_register = f'{fake.name()}'
 last_name_for_register = f'{fake.last_name()}'
-email_for_register = f'{random.randint(0,100)}{fake.email()}'
+email_for_register = f'{fake.email()}'
+email_for_register_for_ui = f'{fake.email()}'
 password = '1234567'
 
 

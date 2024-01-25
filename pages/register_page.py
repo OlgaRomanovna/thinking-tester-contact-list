@@ -13,7 +13,7 @@ class RegisterPage:
     def fill_form(self):
         browser.element('#firstName').type(data.first_name_for_register)
         browser.element('#lastName').type(data.last_name_for_register)
-        browser.element('#email').type(data.email_for_register)
+        browser.element('#email').type(data.email_for_register_for_ui)
         browser.element('#password').type(data.password)
 
     @allure.step('Подтверждаем данные')
