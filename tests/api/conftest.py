@@ -37,9 +37,7 @@ def get_token():
 
 def post_request(endpoint, json):
     response = request("POST", f'{BASE_URL}{endpoint}', json=json, headers={"Authorization": f"Bearer {get_token()}"})
-    logging.info(response.request.url)
-    logging.info(response.status_code)
-    logging.info(response.json())
+    get_curl(response)
     return response
 
 
