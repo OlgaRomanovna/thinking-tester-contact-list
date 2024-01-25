@@ -1,6 +1,6 @@
 import allure
 from selene import have, browser
-from data import data
+from thinking_tester_contact_list.data import data
 
 
 class AddContactPage:

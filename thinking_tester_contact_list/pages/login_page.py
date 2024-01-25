@@ -1,7 +1,6 @@
 import allure
 from selene import browser, have
-
-from data import data
+from thinking_tester_contact_list.data import data
 
 
 class LoginPage:
