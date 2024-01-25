@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 from requests import request
 from pydantic import BaseModel
 
-from utils.attachments import allure_logger
 
 BASE_URL = 'https://thinking-tester-contact-list.herokuapp.com'
 
@@ -36,7 +35,6 @@ def get_token():
     return response.json()['token']
 
 
-@allure_logger
 def post_request(endpoint, json):
     response = request("POST", f'{BASE_URL}{endpoint}', json=json, headers={"Authorization": f"Bearer {get_token()}"})
     logging.info(response.request.url)
