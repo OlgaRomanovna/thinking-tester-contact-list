@@ -3,7 +3,7 @@ import pytest
 from data.data import first_name_for_register, last_name_for_register, password, email_for_register
 from schemas.schema_create_user import CreateUser
 from tests.api.conftest import check_response_list_schema, post_request_without_token
-from utils.const import CREATED, BLOCKER, CRITICAL
+from utils.const import CREATED, BLOCKER
 
 
 @allure.id("29427")
