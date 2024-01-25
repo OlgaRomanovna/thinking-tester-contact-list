@@ -1,9 +1,16 @@
+import json
 import os
 import allure
 import pytest
+import logging
+
+from allure_commons.types import AttachmentType
+from curlify import to_curl
 from dotenv import load_dotenv
 from requests import request
 from pydantic import BaseModel
+
+from utils.attachments import allure_logger
 
 BASE_URL = 'https://thinking-tester-contact-list.herokuapp.com'
 
@@ -13,6 +20,15 @@ def load_env():
     load_dotenv()
 
 
+def get_curl(response):
+    allure.attach(
+        body=to_curl(response.request).encode("utf8"),
+        name=f"Request {response.status_code}",
+        attachment_type=AttachmentType.TEXT,
+        extension=".txt"
+    )
+
+
 def get_token():
     json = {"email": f"{os.getenv('EMAIL')}",
             "password": f"{os.getenv('PASSWORD_USER')}"}
@@ -20,33 +36,50 @@ def get_token():
     return response.json()['token']
 
 
+@allure_logger
 def post_request(endpoint, json):
     response = request("POST", f'{BASE_URL}{endpoint}', json=json, headers={"Authorization": f"Bearer {get_token()}"})
+    logging.info(response.request.url)
+    logging.info(response.status_code)
+    logging.info(response.json())
     return response
 
 
 def post_request_without_token(endpoint, json):
     response = request("POST", f'{BASE_URL}{endpoint}', json=json)
+    logging.info(response.request.url)
+    logging.info(response.status_code)
+    logging.info(response.json())
     return response
 
 
 def delete_request(endpoint):
     response = request("DELETE", f'{BASE_URL}{endpoint}', headers={"Authorization": f"Bearer {get_token()}"})
+    logging.info(response.request.url)
+    logging.info(response.status_code)
+    logging.info(response.json())
     return response
 
 
 def get_request(endpoint):
     response = request("GET", f'{BASE_URL}{endpoint}', headers={"Authorization": f"Bearer {get_token()}"})
+    get_curl(response)
     return response
 
 
 def get_request_with_invalid_token(endpoint, header):
     response = request("GET", f'{BASE_URL}{endpoint}', headers=header)
+    logging.info(response.request.url)
+    logging.info(response.status_code)
+    logging.info(response.json())
     return response
 
 
 def put_request(endpoint, json):
     response = request("PUT", f'{BASE_URL}{endpoint}', json=json, headers={"Authorization": f"Bearer {get_token()}"})
+    logging.info(response.request.url)
+    logging.info(response.status_code)
+    logging.info(response.json())
     return response
 
 

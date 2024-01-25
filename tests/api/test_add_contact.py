@@ -2,7 +2,7 @@ import allure
 import pytest
 from data import data
 from schemas.schema_contacts import ModelItem
-from utils.const import CREATED, BLOCKER, CRITICAL
+from utils.const import CREATED, BLOCKER
 from tests.api.conftest import post_request, check_status_code, check_response_list_schema
 
 

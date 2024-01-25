@@ -1,7 +1,7 @@
 import allure
 import pytest
 from schemas.schema_contacts import Model
-from tests.api.conftest import get_request, check_response_list_schema
+from tests.api.conftest import get_request, check_response_list_schema, get_curl
 from utils.const import OK, BLOCKER, CRITICAL
 
 
@@ -17,7 +17,6 @@ def test_get_contact():
         assert response.status_code == OK
     with allure.step('Валидируем json_schema'):
         check_response_list_schema(Model, response.json())
-
 
 
 @allure.id("29421")
