@@ -13,7 +13,7 @@ from utils.const import OK, BLOCKER, CRITICAL
 @pytest.mark.user
 def test_get_user_profile(load_env):
     with allure.step('Получаем информацию по профилю пользователя'):
-        response = get_request('/users/me', endpoint=)
+        response = get_request('/users/me')
     with allure.step('Валидируем код ответа сервера'):
         assert response.status_code == OK
     with allure.step('Валидируем ответ сервера'):
