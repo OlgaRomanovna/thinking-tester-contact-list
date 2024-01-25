@@ -1,10 +1,9 @@
 # QA Guru: Дипломный проект
 Реализация набора автотестов (UI, API) для сервиса <code>thinking-tester-contact-list.herokuapp</code>
 
+Проект реализован с использованием:
 
-Весь проект выполнен на языке <code>Python</code>, а также дополнительно:
- - для UI-тестов применялись: <code>Selene</code>
- - для API-тестов применялись: <code>Requests</code>, <code>JSONSchema</code>
+<img src="resources/icons/python-original.svg" width="50"> <img src="resources/icons/pytest.png" width="50"> <img src="resources/icons/intellij_pycharm.png" width="50"> <img src="resources/icons/selene.png" width="50"> <img src="resources/icons/selenium.png" width="50"> <img src="resources/icons/selenoid.png" width="50"> <img src="resources/icons/jenkins.png" width="50"> <img src="resources/icons/allure_report.png" width="50"> <img src="resources/icons/allure_testops.png" width="50"> <img src="resources/icons/tg.png" width="50"> <img src="resources/icons/jira.png" width="50">
 
 Запуск тестов и формирование отчетов о запусках формируется с помощью:
  - <code>Jenkins;</code>
@@ -66,6 +65,11 @@ pytest .
 <img src="resources/picture/test_ops_test_cases.png" alt="test_ops_test_cases"/>
 - на основе результатов будет сгенерирован дашборд
 <img src="resources/picture/test_ops_dash.png" alt="test_ops_dash"/>
+
+## Интеграция с Jira
+- в задачу регресса добавлены пройденные тест-кейсы
+- а также запущенный лаунч
+<img src="resources/picture/jira.png" alt="jira"/>
 
 ## Нотификация в Telegram
 - после прохождения тестов результаты будут отправлены в Telegram;  
