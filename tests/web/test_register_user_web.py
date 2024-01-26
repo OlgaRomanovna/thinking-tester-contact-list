@@ -1,9 +1,10 @@
 import allure
 import pytest
-from thinking_tester_contact_list.pages.login_page import LoginPage
+
+from thinking_tester_contact_list.pages.login_page import login_page
 from thinking_tester_contact_list.pages.logout_page import LogoutPage
-from thinking_tester_contact_list.pages.register_page import RegisterPage
-from utils.const import BLOCKER, MINOR
+from thinking_tester_contact_list.pages.register_page import RegisterPage, register_page
+from thinking_tester_contact_list.utils.const import BLOCKER, MINOR
 
 
 @allure.id("29434")
@@ -12,7 +13,6 @@ from utils.const import BLOCKER, MINOR
 @pytest.mark.web
 @pytest.mark.user
 def test_positive_register(open_browser):
-    login_page = LoginPage()
     login_page.open()
     register_page = RegisterPage()
     register_page.open()
@@ -27,9 +27,7 @@ def test_positive_register(open_browser):
 @pytest.mark.web
 @pytest.mark.user
 def test_negative_register(open_browser):
-    login_page = LoginPage()
     login_page.open()
-    register_page = RegisterPage()
     register_page.open()
     register_page.submit()
     register_page.check_after_negative_register('User validation failed: firstName: Path `firstName` is required., '
@@ -43,9 +41,7 @@ def test_negative_register(open_browser):
 @pytest.mark.web
 @pytest.mark.user
 def test_cancel_register(open_browser):
-    login_page = LoginPage()
     login_page.open()
-    register_page = RegisterPage()
     register_page.open()
     register_page.cancel()
     logout_page = LogoutPage()

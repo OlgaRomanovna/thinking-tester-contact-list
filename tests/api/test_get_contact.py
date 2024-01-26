@@ -2,13 +2,13 @@ import allure
 import pytest
 from schemas.schema_contacts import Model
 from tests.api.conftest import get_request, check_response_list_schema
-from utils.const import OK, BLOCKER, CRITICAL
+from thinking_tester_contact_list.utils.const import OK, BLOCKER, CRITICAL
 
 
 @allure.id("29419")
 @allure.severity(BLOCKER)
 @allure.title('Валидация кода и ответа сервера после получения контакта')
-@pytest.mark.test_api
+@pytest.mark.api
 @pytest.mark.contact
 def test_get_contact():
     with allure.step('Получаем контакт'):

@@ -1,8 +1,8 @@
 import allure
 import pytest
-from thinking_tester_contact_list.pages.login_page import LoginPage
-from thinking_tester_contact_list.pages.logout_page import LogoutPage
-from utils.const import BLOCKER, MINOR
+from thinking_tester_contact_list.pages.login_page import login_page
+from thinking_tester_contact_list.pages.logout_page import logout_page
+from thinking_tester_contact_list.utils.const import BLOCKER, MINOR
 
 
 @allure.id("29430")
@@ -11,11 +11,10 @@ from utils.const import BLOCKER, MINOR
 @pytest.mark.web
 @pytest.mark.user
 def test_login(open_browser):
-    page = LoginPage()
-    page.open()
-    page.fill_form()
-    page.submit()
-    page.check_result_after_login(header='Contact List', sub_header='Click on any contact to view the Contact Details')
+    login_page.open()
+    login_page.fill_form()
+    login_page.submit()
+    login_page.check_result_after_login(header='Contact List', sub_header='Click on any contact to view the Contact Details')
 
 
 @allure.id("29431")
@@ -24,11 +23,9 @@ def test_login(open_browser):
 @pytest.mark.web
 @pytest.mark.user
 def test_logout(open_browser):
-    login_page = LoginPage()
     login_page.open()
     login_page.fill_form()
     login_page.submit()
-    logout_page = LogoutPage()
     logout_page.log_out()
     logout_page.check_result_after_log_out(
         header='Contact List App',
@@ -44,7 +41,6 @@ def test_logout(open_browser):
 @pytest.mark.web
 @pytest.mark.user
 def test_incorrect_login(open_browser):
-    login_page = LoginPage()
     login_page.open()
     login_page.fill_form_incorrect()
     login_page.submit()
@@ -56,6 +52,5 @@ def test_incorrect_login(open_browser):
 @allure.title('Проверка ссылки на главной странице')
 @pytest.mark.web
 def test_check_api_documentation(open_browser):
-    login_page = LoginPage()
     login_page.open()
     login_page.check_link()

@@ -38,3 +38,4 @@ class LoginPage:
         browser.element('body > div:nth-child(3) > a').click()
 
 
+login_page = LoginPage()

@@ -39,3 +39,6 @@ class AddContactPage:
             f'{data.city} {data.state_province} {data.postal_code}'
         ))
         browser.element('#myTable > tr > td:nth-child(8)').should(have.text(data.country))
+
+
+add_contact_page = AddContactPage()

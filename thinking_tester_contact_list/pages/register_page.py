@@ -30,3 +30,6 @@ class RegisterPage:
     @allure.step('Проверяем результат, когда форма регистрации не заполнена')
     def check_after_negative_register(self, name_error: str):
         browser.element('#error').should(have.text(name_error))
+
+
+register_page = RegisterPage()
