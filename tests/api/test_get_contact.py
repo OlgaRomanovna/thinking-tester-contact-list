@@ -2,7 +2,7 @@ import allure
 import pytest
 from schemas.schema_contacts import Model
 from tests.api.conftest import get_request, check_response_list_schema
-from thinking_tester_contact_list.utils.const import OK, BLOCKER, CRITICAL
+from thinking_tester_contact_list_tests.utils.const import OK, BLOCKER, CRITICAL
 
 
 @allure.id("29419")

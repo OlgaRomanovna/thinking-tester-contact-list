@@ -1,8 +1,8 @@
 import allure
 import pytest
 from schemas.schema_contacts import ModelItem
-from thinking_tester_contact_list.data import data
-from thinking_tester_contact_list.utils.const import CREATED, BLOCKER
+from thinking_tester_contact_list_tests.data import data
+from thinking_tester_contact_list_tests.utils.const import CREATED, BLOCKER
 from tests.api.conftest import post_request, check_status_code, check_response_list_schema
 
 

@@ -1,8 +1,8 @@
 import allure
 import pytest
-from thinking_tester_contact_list.pages.add_contact_page import add_contact_page
-from thinking_tester_contact_list.pages.login_page import login_page
-from thinking_tester_contact_list.utils.const import BLOCKER
+from thinking_tester_contact_list_tests.pages.add_contact_page import add_contact_page
+from thinking_tester_contact_list_tests.pages.login_page import login_page
+from thinking_tester_contact_list_tests.utils.const import BLOCKER
 
 
 @allure.id("29429")

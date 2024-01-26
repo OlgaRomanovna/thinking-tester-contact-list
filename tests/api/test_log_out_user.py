@@ -1,7 +1,7 @@
 import allure
 import pytest
 from tests.api.conftest import post_request, get_token, get_request_with_invalid_token
-from thinking_tester_contact_list.utils.const import OK, UNAUTHORIZED, CRITICAL
+from thinking_tester_contact_list_tests.utils.const import OK, UNAUTHORIZED, CRITICAL
 
 
 @allure.id("29420")

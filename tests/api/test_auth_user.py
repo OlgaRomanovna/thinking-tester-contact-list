@@ -2,7 +2,7 @@ import os
 import allure
 import pytest
 from tests.api.conftest import post_request, check_status_code
-from thinking_tester_contact_list.utils.const import OK, BLOCKER
+from thinking_tester_contact_list_tests.utils.const import OK, BLOCKER
 
 
 @allure.id("29411")

@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from selene import browser
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from thinking_tester_contact_list.utils.attachments import add_html, add_screenshot, add_video, add_logs
+from thinking_tester_contact_list_tests.utils.attachments import add_html, add_screenshot, add_video, add_logs
 
 
 @pytest.fixture(scope='function')
